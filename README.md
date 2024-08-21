@@ -48,36 +48,44 @@ To run this project, you will need the following:
 - **Git**: For version control and pushing changes to the SCM repository.
 
 ## Setup Instructions
-
 ### 1. Clone the Repository
-
 Clone this repository to your local machine:
-
+```
 git clone https://github.com/isanah/helm-argocd.git
 cd helm-argocd
-
+```
 ### 2. Build and Push Docker Images
 
 # Backend
-cd backend
-docker build -t gcr.io/your-project-id/backend:latest .
-docker push gcr.io/your-project-id/backend:latest
+```
+- cd backend
+- docker build -t gcr.io/your-project-id/backend:latest .
+- docker push gcr.io/your-project-id/backend:latest
+```
 
 # Frontend
-cd ../frontend
-docker build -t gcr.io/your-project-id/frontend:latest .
-docker push gcr.io/your-project-id/frontend:latest
+```
+- cd ../frontend
+- docker build -t gcr.io/your-project-id/frontend:latest .
+- docker push gcr.io/your-project-id/frontend:latest
+```
 
 ### 3. Deploy with Helm
 # Deploy backend
+```
 helm install backend helm-charts/backend --namespace your-namespace
+```
 
 # Deploy frontend
+```
 helm install frontend helm-charts/frontend --namespace your-namespace
+```
 
 ### 4. Set Up ArgoCD
+```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
 
 ### 5. Create an ArgoCD application that points to your Helm chart in the GitHub repository.
 
