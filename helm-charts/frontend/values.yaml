@@ -1,0 +1,8 @@
+replicaCount: 2
+image:
+  repository: gcr.io/gen-lang-client-0671536365/frontend:latest
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000

@@ -1,0 +1,7 @@
+replicaCount: 2
+image:
+  repository: gcr.io/gen-lang-client-0671536365/backend:latest
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 5000
