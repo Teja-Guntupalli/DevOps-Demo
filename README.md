@@ -58,16 +58,16 @@ cd helm-argocd
 
 # Backend
 ```
-- cd backend
-- docker build -t gcr.io/your-project-id/backend:latest .
-- docker push gcr.io/your-project-id/backend:latest
+cd backend
+docker build -t gcr.io/your-project-id/backend:latest .
+docker push gcr.io/your-project-id/backend:latest
 ```
 
 # Frontend
 ```
-- cd ../frontend
-- docker build -t gcr.io/your-project-id/frontend:latest .
-- docker push gcr.io/your-project-id/frontend:latest
+cd ../frontend
+docker build -t gcr.io/your-project-id/frontend:latest .
+docker push gcr.io/your-project-id/frontend:latest
 ```
 
 ### 3. Deploy with Helm
